@@ -1,0 +1,8 @@
+{
+  "name": "learningpin_hybrid_android",
+  "app_id": "5df17524",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
