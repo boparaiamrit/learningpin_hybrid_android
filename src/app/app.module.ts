@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+import { MbscModule } from '@mobiscroll/angular-trial';
 import {ErrorHandler, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
@@ -29,7 +31,9 @@ import {GlobalProvider} from '../providers/global/global';
         HomePage,
         TabsPage
     ],
-    imports: [
+    imports: [ 
+    FormsModule, 
+    MbscModule,
         BrowserModule,
         IonicModule.forRoot(LearningPin),
         AngularFireModule.initializeApp(environment.firebase),
