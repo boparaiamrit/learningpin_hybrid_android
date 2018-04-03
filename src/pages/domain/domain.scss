@@ -1,6 +1,6 @@
 page-domain {
   .bg {
-    background: url('../../assets/images/splash_screen.png') no-repeat center;
+    background: url('../assets/images/splash_screen.png') no-repeat center;
     background-size: cover;
   }
 
@@ -16,33 +16,36 @@ page-domain {
     margin-top: 80px;
   }
 
-  .input {
+  .form {
+    width: 65%;
     display: flex;
     margin-top: 60px;
     padding-bottom: 2px;
   }
 
-  .input input {
-    width: 100px;
+  .form ion-input {
     background: transparent;
     border: none;
+    -webkit-box-shadow: none;
     box-shadow: none;
     color: #ffffff;
     font-size: 14px;
-    text-align: right;
-    height: 18px;
     border-bottom: solid 2px #ffffff;
     border-radius: 0;
+    margin-right: 0;
   }
 
-  .input input::placeholder {
+  .form ion-input .text-input{
+    padding: 0 0 5px 20px;
+    margin: 0;
+  }
+
+  .form ion-input::placeholder {
     color: #ffffff;
-    font-size: 14px;
-    text-align: right;
   }
 
-  .input label {
-    height: 18px;
+  .form label {
+    padding: 0 20px 5px 0;
     font-size: 14px;
     color: #f5a623;
     border-bottom: solid 2px #ffffff;

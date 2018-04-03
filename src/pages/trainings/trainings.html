@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Trainings</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="training-calendar"
+         mbsc-calendar
+         #trainingCal="mobiscroll"
+         [mbsc-options]="calSettings"
+         (onDayChange)="onDayChange($event)">
+    </div>
+    <div class="trainings-block">
+        <h4 class="trainings-heading">Trending Trainings in this Month</h4>
+        <div class="" *ngFor="let training of myTrainings">
+            <ion-card class="training-card" (click)='enrollTraining(training)' tappable>
+                <ion-card-content class="training-card-content">
+                    <div>
+                        <h4>{{ training.name }}</h4>
+                        <p class="time">{{training.time}}</p>
+                    </div>
+                    <div>
+                        <p class="date">{{training.date}}</p>
+                    </div>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </div>
+</ion-content>

@@ -1,12 +1,17 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>login</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<ion-content class="bg">
+    <div class="content">
+        <img class="logo" src="assets/images/logo-white.png" alt="Learning Pin">
+        <div class="form">
+            <div class="form-group">
+                <ion-label stacked>Email</ion-label>
+                <ion-input #emailInput type="text" [(ngModel)]="email" (keyup.enter)="moveToPassword()"></ion-input>
+            </div>
+            <div class="form-group">
+                <ion-label stacked>Password</ion-label>
+                <ion-input #passwordInput type="password" [(ngModel)]="password" (keyup.enter)="login()"></ion-input>
+            </div>
+            
+            <button ion-button class="ok-button" (click)='login()'>Login</button>
+        </div>
+    </div>
 </ion-content>

@@ -1,8 +1,9 @@
 <ion-content class="bg">
     <div class="content">
-        <img class="logo" src="../../assets/images/logo-white.png" alt="Learning Pin">
-        <div class="input">
-            <input type="text" placeholder="your-domain" [(ngModel)]="domain">
+        <img class="logo" src="assets/images/logo-white.png" alt="Learning Pin">
+        <div class="form">
+            <ion-input type="text" placeholder="your-domain" [(ngModel)]="domain" (keyup.enter)="next()">
+            </ion-input>
             <label>.learningpin.com</label>
         </div>
         <button ion-button class="next" (click)='next()'>Next</button>
