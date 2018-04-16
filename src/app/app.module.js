@@ -20,30 +20,34 @@ const tabs_1 = require("../pages/tabs/tabs");
 const http_1 = require("@ionic-native/http");
 const status_bar_1 = require("@ionic-native/status-bar");
 const splash_screen_1 = require("@ionic-native/splash-screen");
-const domain_1 = require("../pages/domain/domain");
 const keyboard_1 = require("@ionic-native/keyboard");
 const login_1 = require("../pages/login/login");
 const global_1 = require("../providers/global/global");
 const trainings_1 = require("../pages/trainings/trainings");
 const assessments_1 = require("../pages/assessments/assessments");
 const learnings_1 = require("../pages/learnings/learnings");
+const attempt_assessment_1 = require("../pages/attempt-assessment/attempt-assessment");
+const assessment_detail_1 = require("../pages/assessment-detail/assessment-detail");
+const angular_svg_round_progressbar_1 = require("angular-svg-round-progressbar");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
         declarations: [
             app_component_1.LearningPin,
-            domain_1.DomainPage,
             login_1.LoginPage,
             tabs_1.TabsPage,
             trainings_1.TrainingsPage,
             assessments_1.AssessmentsPage,
-            learnings_1.LearningsPage
+            learnings_1.LearningsPage,
+            assessment_detail_1.AssessmentDetailPage,
+            attempt_assessment_1.AttemptAssessmentPage,
         ],
         imports: [
             forms_1.FormsModule,
             platform_browser_1.BrowserModule,
             angular_trial_1.MbscModule,
+            angular_svg_round_progressbar_1.RoundProgressModule,
             ionic_angular_1.IonicModule.forRoot(app_component_1.LearningPin),
             storage_1.IonicStorageModule.forRoot({
                 name: 'learning_pin',
@@ -55,12 +59,13 @@ AppModule = __decorate([
         bootstrap: [ionic_angular_1.IonicApp],
         entryComponents: [
             app_component_1.LearningPin,
-            domain_1.DomainPage,
             login_1.LoginPage,
             tabs_1.TabsPage,
             trainings_1.TrainingsPage,
             assessments_1.AssessmentsPage,
-            learnings_1.LearningsPage
+            learnings_1.LearningsPage,
+            assessment_detail_1.AssessmentDetailPage,
+            attempt_assessment_1.AttemptAssessmentPage,
         ],
         providers: [
             http_1.HTTP,

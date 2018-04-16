@@ -50,8 +50,8 @@ let DomainPage = class DomainPage {
                 this.globalProvider.showToast('Invalid Domain.');
             }
             else {
-                this.storage.set('domain', domain + '.learningpin.com');
-                this.storage.set('url', 'https://' + domain + '.learningpin.com');
+                this.storage.set('domain', domain + '.ngrok.io');
+                this.storage.set('url', 'https://' + domain + '.ngrok.io');
                 this.navCtrl.push(login_1.LoginPage);
             }
         }

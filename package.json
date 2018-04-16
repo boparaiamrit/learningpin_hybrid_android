@@ -31,6 +31,7 @@
         "@mobiscroll/angular": "https://npm.mobiscroll.com/@mobiscroll/angular-trial/-/angular-trial-4.1.0.tgz",
         "@mobiscroll/angular-trial": "https://npm.mobiscroll.com/@mobiscroll/angular-trial/-/angular-trial-4.0.0.tgz",
         "@types/lodash": "^4.14.106",
+        "angular-svg-round-progressbar": "^1.2.1",
         "angularfire2": "^5.0.0-rc.6",
         "collect.js": "^4.0.14",
         "cordova-android": "7.0.0",

@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{ assessment.assessment_name }}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-card class="assessment-detail">
+        <ion-card-content class="assessment-detail-content">
+            <div class="assessment-head">
+                <h4 class="assessment-name">{{ assessment.assessment_name }}</h4>
+            </div>
+            <div class="assessment-body">
+                <p><b>Time Limit</b>: {{assessment.time}}</p>
+                <p><b>Total Number of Questons</b>: {{assessment.no_of_questions}}</p>
+                <p><b>Marks for Each Correct Answer</b>: {{assessment.correct_answer_marks}}</p>
+                <p><b>Marks for Each Wrong Answer</b>: {{assessment.wrong_answer_marks}}</p>
+                <p><b>Maximum Marks</b>: {{assessment.max_marks}}</p>
+            </div>
+            <div class="assessment-footer">
+                <button ion-button
+                        class="btn-cancel-test"
+                        (click)="cancelAssessment()">
+                    Cancel Test
+                </button>
+                <button ion-button
+                        class="btn-start-test"
+                        (click)="attemptAssessment(assessment)">
+                    Start Test
+                </button>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

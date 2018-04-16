@@ -36,7 +36,7 @@ let GlobalProvider = class GlobalProvider {
             this.loading.present();
         }
         else {
-            if (!_.isEmpty(this.loading)) {
+            if (this.loading) {
                 this.loading.dismiss();
             }
         }

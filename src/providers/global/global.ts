@@ -22,7 +22,7 @@ export class GlobalProvider {
             this.loading = this.loadingController.create();
             this.loading.present();
         } else {
-            if (!_.isEmpty(this.loading)) {
+            if (this.loading) {
                 this.loading.dismiss();
             }
         }

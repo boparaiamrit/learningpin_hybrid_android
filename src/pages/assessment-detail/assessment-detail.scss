@@ -1,0 +1,55 @@
+page-assessment-detail {
+  .assessment-detail {
+    border-radius: 5px;
+    margin: 10px 0 0;
+    width: 100%;
+  }
+
+  .assessment-detail-content {
+    padding: 0;
+  }
+
+  .assessment-detail .assessment-head {
+    padding: 15px;
+    border-bottom: solid 1px #dedfe4;
+  }
+
+  .assessment-detail .assessment-head h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #f5a623;
+    text-align: center;
+  }
+
+  .assessment-detail .assessment-body {
+    padding: 15px;
+  }
+
+  .assessment-detail .assessment-body p {
+    padding: 0;
+    margin: 0 0 10px;
+  }
+
+  .assessment-detail .assessment-footer {
+    border-top: solid 1px #dedfe4;
+    display: flex;
+  }
+
+  .assessment-detail .assessment-footer button {
+    color: #f5a623;
+    background: #fff;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+    margin: 0;
+  }
+
+  .assessment-detail .assessment-footer button.btn-cancel-test {
+    border-right: solid 1px #dedfe4;
+  }
+
+  .assessment-detail .assessment-footer button.btn-start-test {
+    font-weight: bold;
+  }
+}

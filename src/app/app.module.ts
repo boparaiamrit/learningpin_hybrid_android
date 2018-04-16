@@ -20,21 +20,26 @@ import {GlobalProvider} from '../providers/global/global';
 import {TrainingsPage} from "../pages/trainings/trainings";
 import {AssessmentsPage} from "../pages/assessments/assessments";
 import {LearningsPage} from "../pages/learnings/learnings";
+import {AttemptAssessmentPage} from "../pages/attempt-assessment/attempt-assessment";
+import {AssessmentDetailPage} from "../pages/assessment-detail/assessment-detail";
+import {RoundProgressModule} from "angular-svg-round-progressbar";
 
 @NgModule({
     declarations: [
         LearningPin,
-        DomainPage,
         LoginPage,
         TabsPage,
         TrainingsPage,
         AssessmentsPage,
-        LearningsPage
+        LearningsPage,
+        AssessmentDetailPage,
+        AttemptAssessmentPage,
     ],
     imports: [
         FormsModule,
         BrowserModule,
         MbscModule,
+        RoundProgressModule,
         IonicModule.forRoot(LearningPin),
         IonicStorageModule.forRoot({
             name: 'learning_pin',
@@ -46,12 +51,13 @@ import {LearningsPage} from "../pages/learnings/learnings";
     bootstrap: [IonicApp],
     entryComponents: [
         LearningPin,
-        DomainPage,
         LoginPage,
         TabsPage,
         TrainingsPage,
         AssessmentsPage,
-        LearningsPage
+        LearningsPage,
+        AssessmentDetailPage,
+        AttemptAssessmentPage,
     ],
     providers: [
         HTTP,

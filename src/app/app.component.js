@@ -13,9 +13,9 @@ const core_1 = require("@angular/core");
 const ionic_angular_1 = require("ionic-angular");
 const status_bar_1 = require("@ionic-native/status-bar");
 const splash_screen_1 = require("@ionic-native/splash-screen");
-const domain_1 = require("../pages/domain/domain");
 const storage_1 = require("@ionic/storage");
 const tabs_1 = require("../pages/tabs/tabs");
+const login_1 = require("../pages/login/login");
 let LearningPin = class LearningPin {
     constructor(platform, statusBar, splashScreen, storage) {
         platform.ready()
@@ -28,11 +28,11 @@ let LearningPin = class LearningPin {
                     this.rootPage = tabs_1.TabsPage;
                 }
                 else {
-                    this.rootPage = domain_1.DomainPage;
+                    this.rootPage = login_1.LoginPage;
                 }
             })
                 .catch(() => {
-                this.rootPage = domain_1.DomainPage;
+                this.rootPage = login_1.LoginPage;
             });
         });
     }

@@ -1,3 +1,56 @@
 page-assessments {
+  .assessment-card {
+    position: relative;
+    min-height: 200px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
 
+  .assessment-card-content {
+    padding: 0;
+  }
+
+  .assessment-card-content .training-name {
+    font-size: 16px;
+    color: #f5a623;
+    font-weight: bold;
+  }
+
+  .assessment-heading {
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #f5a623;
+  }
+
+  .assessment-body {
+    padding: 10px;
+  }
+
+  .assessment-body p {
+    font-size: 14px;
+    text-align: left;
+    color: #000000;
+  }
+
+  .assessment-footer {
+    padding-top: 1px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #f5a623;
+  }
+
+  .assessment-footer button,
+  .assessment-footer button:focus,
+  .assessment-footer button:hover {
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+    background: #fff;
+    color: #f5a623;
+    font-weight: bold;
+  }
 }
+

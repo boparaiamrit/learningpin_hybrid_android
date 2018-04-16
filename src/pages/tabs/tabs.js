@@ -13,18 +13,28 @@ const core_1 = require("@angular/core");
 const trainings_1 = require("../trainings/trainings");
 const assessments_1 = require("../assessments/assessments");
 const learnings_1 = require("../learnings/learnings");
+const ionic_angular_1 = require("ionic-angular");
 let TabsPage = class TabsPage {
     constructor() {
         this.tab1Root = trainings_1.TrainingsPage;
         this.tab2Root = assessments_1.AssessmentsPage;
         this.tab3Root = learnings_1.LearningsPage;
+        // ionViewDidLoad() {
+        //     let $this = this;
+        //     setTimeout(function () {
+        //         $this.lpTabs.select(1);
+        //     }, 1000)
+        // }
     }
 };
+__decorate([
+    core_1.ViewChild('lpTabs'),
+    __metadata("design:type", ionic_angular_1.Tabs)
+], TabsPage.prototype, "lpTabs", void 0);
 TabsPage = __decorate([
     core_1.Component({
         templateUrl: 'tabs.html'
-    }),
-    __metadata("design:paramtypes", [])
+    })
 ], TabsPage);
 exports.TabsPage = TabsPage;
 //# sourceMappingURL=tabs.js.map

@@ -21,22 +21,20 @@ export class TrainingsPage {
         readonly: true,
     };
 
-    private selectedDates: Array<Date> = [];
-    private myTrainings: Array<Training> = [];
+    selectedDates: Array<Date> = [];
+    trainings: Array<Training> = [];
 
     constructor(
         public navCtrl: NavController,
         public navParams: NavParams,
         private globalProvider: GlobalProvider,
         private alertCtrl: AlertController) {
-    }
 
-    ionViewDidLoad() {
         this.getTrainings();
     }
 
     async getTrainings() {
-        let myTrainings = [];
+        let trainings = [];
 
         this.globalProvider.showLoading();
         await this.globalProvider
@@ -46,13 +44,13 @@ export class TrainingsPage {
                     this.globalProvider.showLoading(false);
                     let data = JSON.parse(response['data']);
 
-                    myTrainings = data['my_trainings'];
+                    trainings = data['my_trainings'];
                 }
             });
 
-        this.myTrainings = myTrainings;
+        this.trainings = trainings;
 
-        this.selectedDates = await _.map(myTrainings, function (training) {
+        this.selectedDates = await _.map(trainings, function (training) {
             return moment(training['date_ymd']).toDate();
         });
 
@@ -61,14 +59,14 @@ export class TrainingsPage {
         });
     }
 
-    public async onDayChange(event) {
+    async onDayChange(event) {
         if (!event['selected']) {
             return false;
         }
 
         let selectedDate = moment(event['date']).format('YYYY-MM-DD');
         let selectedTraining: Training = null;
-        await this.myTrainings.forEach(function (training) {
+        await this.trainings.forEach(function (training) {
             if (training['date_ymd'] == selectedDate) {
                 selectedTraining = training;
             }
@@ -77,7 +75,7 @@ export class TrainingsPage {
         this.enrollTraining(selectedTraining);
     }
 
-    public enrollTraining(training: Training) {
+    enrollTraining(training: Training) {
         let $this = this;
         let alert = this.alertCtrl
             .create({

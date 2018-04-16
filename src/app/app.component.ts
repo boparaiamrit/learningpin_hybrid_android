@@ -2,9 +2,9 @@ import {Component} from '@angular/core';
 import {Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-import {DomainPage} from "../pages/domain/domain";
 import {Storage} from "@ionic/storage";
 import {TabsPage} from "../pages/tabs/tabs";
+import {LoginPage} from "../pages/login/login";
 
 @Component({
     templateUrl: 'app.html'
@@ -26,11 +26,11 @@ export class LearningPin {
                         if (isLoggedIn) {
                             this.rootPage = TabsPage;
                         } else {
-                            this.rootPage = DomainPage;
+                            this.rootPage = LoginPage;
                         }
                     })
                     .catch(() => {
-                        this.rootPage = DomainPage;
+                        this.rootPage = LoginPage;
                     });
             });
     }

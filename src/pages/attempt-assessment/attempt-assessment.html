@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{ assessment.assessment_name }}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div class="progress-wrapper" *ngIf="timer">
+        <div class="progress-time">
+            {{ differenceForHuman(currentTime, 's') }}
+        </div>
+        <round-progress [current]=currentTime [max]=timer color='#f5a623'>
+        </round-progress>
+    </div>
+    <div class="questions">
+        <div *ngFor="let question of questions; let questionIndex = index">
+            <div *ngIf="questionIndex == selectedQuestion">
+                <h4 class="question">{{ question.question }}</h4>
+                <div class="options">
+                    <button ion-button clear [ngClass]="{'selected' : answers[question.id] == 'a'}"
+                            (click)="selectOption(question.id, 'a')">
+                        {{ question.choicea }}
+                    </button>
+                    <button ion-button clear [ngClass]="{'selected' : answers[question.id] == 'b'}"
+                            (click)="selectOption(question.id, 'b')">
+                        {{ question.choiceb }}
+                    </button>
+                    <button ion-button clear [ngClass]="{'selected' : answers[question.id] == 'c'}"
+                            (click)="selectOption(question.id, 'c')">
+                        {{ question.choicec }}
+                    </button>
+                    <button ion-button clear [ngClass]="{'selected' : answers[question.id] == 'd'}"
+                            (click)="selectOption(question.id, 'd')">
+                        {{ question.choiced }}
+                    </button>
+                    <button ion-button clear [ngClass]="{'selected' : answers[question.id] == 'e'}"
+                            *ngIf="question.choicee"
+                            (click)="selectOption(question.id, 'e')">
+                        {{ question.choicee }}
+                    </button>
+                </div>
+                <p class="question-total-count">{{ questionIndex + 1 }}/{{ questions.length }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="action-btns" *ngIf="showActionBtns">
+        <button ion-button clear class="finish">Finish</button>
+        <button ion-button clear class="next" [disabled]="isPrevDisabled"
+                (click)="prevQuestion()">Prev
+        </button>
+        <button ion-button clear class="next" [disabled]="isNextDisabled"
+                (click)="nextQuestion()">Next
+        </button>
+    </div>
+</ion-content>

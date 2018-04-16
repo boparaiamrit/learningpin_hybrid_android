@@ -36,14 +36,12 @@ let TrainingsPage = class TrainingsPage {
             readonly: true,
         };
         this.selectedDates = [];
-        this.myTrainings = [];
-    }
-    ionViewDidLoad() {
+        this.trainings = [];
         this.getTrainings();
     }
     getTrainings() {
         return __awaiter(this, void 0, void 0, function* () {
-            let myTrainings = [];
+            let trainings = [];
             this.globalProvider.showLoading();
             yield this.globalProvider
                 .request('GET', '/api/trainings')
@@ -51,11 +49,11 @@ let TrainingsPage = class TrainingsPage {
                 if (response['status'] == 200) {
                     this.globalProvider.showLoading(false);
                     let data = JSON.parse(response['data']);
-                    myTrainings = data['my_trainings'];
+                    trainings = data['my_trainings'];
                 }
             });
-            this.myTrainings = myTrainings;
-            this.selectedDates = yield _.map(myTrainings, function (training) {
+            this.trainings = trainings;
+            this.selectedDates = yield _.map(trainings, function (training) {
                 return moment(training['date_ymd']).toDate();
             });
             this.trainingCal.instance.option({
@@ -70,7 +68,7 @@ let TrainingsPage = class TrainingsPage {
             }
             let selectedDate = moment(event['date']).format('YYYY-MM-DD');
             let selectedTraining = null;
-            yield this.myTrainings.forEach(function (training) {
+            yield this.trainings.forEach(function (training) {
                 if (training['date_ymd'] == selectedDate) {
                     selectedTraining = training;
                 }
