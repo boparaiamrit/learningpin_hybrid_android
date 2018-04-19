@@ -7,7 +7,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const forms_1 = require("@angular/forms");
-const angular_trial_1 = require("@mobiscroll/angular-trial");
 const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
 const ionic_angular_1 = require("ionic-angular");
@@ -46,7 +45,6 @@ AppModule = __decorate([
         imports: [
             forms_1.FormsModule,
             platform_browser_1.BrowserModule,
-            angular_trial_1.MbscModule,
             angular_svg_round_progressbar_1.RoundProgressModule,
             ionic_angular_1.IonicModule.forRoot(app_component_1.LearningPin),
             storage_1.IonicStorageModule.forRoot({

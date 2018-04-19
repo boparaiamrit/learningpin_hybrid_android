@@ -1,5 +1,4 @@
 import {FormsModule} from '@angular/forms';
-import {MbscModule} from '@mobiscroll/angular-trial';
 import {ErrorHandler, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
@@ -13,7 +12,6 @@ import {TabsPage} from '../pages/tabs/tabs';
 import {HTTP} from '@ionic-native/http';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-import {DomainPage} from "../pages/domain/domain";
 import {Keyboard} from "@ionic-native/keyboard";
 import {LoginPage} from "../pages/login/login";
 import {GlobalProvider} from '../providers/global/global';
@@ -38,7 +36,6 @@ import {RoundProgressModule} from "angular-svg-round-progressbar";
     imports: [
         FormsModule,
         BrowserModule,
-        MbscModule,
         RoundProgressModule,
         IonicModule.forRoot(LearningPin),
         IonicStorageModule.forRoot({
